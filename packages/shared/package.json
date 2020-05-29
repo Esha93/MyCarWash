@@ -1,0 +1,16 @@
+{
+  "name": "carwash-apps-shared",
+  "version": "*",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esha93/CarWash-Apps.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

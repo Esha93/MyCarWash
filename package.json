@@ -1,0 +1,42 @@
+{
+  "name": "carwash-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "lerna bootstrap",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esha93/carwash-apps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Esha93/carwash-apps/issues"
+  },
+  "homepage": "https://github.com/Esha93/carwash-apps#readme",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.1.20",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.0"
+  }
+}

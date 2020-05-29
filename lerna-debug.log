@@ -1,0 +1,14 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: 'carwash-apps/carwash',
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '3.22.0',
+0 silly argv   '$0': 'C:\\Users\\91973\\AppData\\Roaming\\npm-cache\\_npx\\40136\\node_modules\\lerna\\cli.js',
+0 silly argv   pkg: 'carwash-apps/carwash-apps-shared'
+0 silly argv }
+1 notice cli v3.22.0
+2 verbose rootPath D:\Esha\Docs\React\Project
+3 error Error: exited with error code: 128
+3 error     at ChildProcess.<anonymous> (D:\Esha\Docs\React\Project\node_modules\@evocateur\pacote\lib\util\finished.js:12:19)
+3 error     at ChildProcess.emit (events.js:311:20)
+3 error     at maybeClose (internal/child_process.js:1021:16)

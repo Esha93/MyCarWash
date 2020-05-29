@@ -1,0 +1,36 @@
+{
+  "name": "carwash",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "carwash-apps-shared": "^*",
+    "concurrently": "^5.2.0",
+    "cookie-session": "^1.4.0",
+    "mongoose": "^5.9.16",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "nodemon server.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
