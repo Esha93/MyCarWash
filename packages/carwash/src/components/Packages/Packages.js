@@ -3,9 +3,10 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import {Link } from 'react-router-dom';
 import classes from './Packages.module.css';
-
+import { withRouter } from 'react-router-dom';
 
 const packages = (props) => {
+    console.log(props);
     let silverService = [];
     let goldService = [];
     let platinumService = [];
@@ -39,6 +40,7 @@ const packages = (props) => {
         return <ListGroup.Item key={item} style={{color: 'tomato'}}>{item}</ListGroup.Item>
     })
 
+    const searchParam = props.location.search;
     
     return(
  
@@ -55,7 +57,7 @@ const packages = (props) => {
                             {item.carType}
                             <small>({item.carSize})</small> 
                             @{item.price}/- 
-                            <Link to={{pathname: '/contact-data', carDetails: item}}>Book</Link>
+                            <Link to={{pathname: '/cart', carDetails: item, search: searchParam}}>Book</Link>
                         </ListGroup.Item>
                     ))}
                     
@@ -75,7 +77,7 @@ const packages = (props) => {
                                 {item.carType}
                                 <small>({item.carSize})</small> 
                                 @{item.price}/- 
-                                <Link to={{pathname: '/contact-data', carDetails: item}}>Book</Link>
+                                <Link to={{pathname: '/cart', carDetails: item, search: searchParam}}>Book</Link>
                             </ListGroup.Item>
                     ))}
                 </ListGroup>
@@ -94,7 +96,7 @@ const packages = (props) => {
                                 {item.carType}
                                 <small>({item.carSize})</small> 
                                 @{item.price}/- 
-                                <Link to={{pathname: '/contact-data', carDetails: item}}>Book</Link>
+                                <Link to={{pathname: '/cart', carDetails: item, search: searchParam}}>Book</Link>
                             </ListGroup.Item>
                     ))}
                 </ListGroup>
@@ -104,4 +106,4 @@ const packages = (props) => {
     )
 };
 
-export default packages;
+export default withRouter(packages);

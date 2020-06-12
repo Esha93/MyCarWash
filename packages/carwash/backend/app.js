@@ -1,13 +1,25 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const loginAuth = require('./routes/login-auth');
-const googleAuth = require('./routes/auth-routes');
+const loginAuth = require('./routes/login-auth');
+const mongoose = require('mongoose');
+const order = require('./routes/order');
+const washers = require('./routes/washers');
 
 const app = express();
 
+mongoose
+    .connect(
+        "mongodb+srv://eshareact:YcbyRRlMX7Xx7Wh1@cluster0-tdqb7.mongodb.net/test?retryWrites=true&w=majority"
+        )
+    .then((res) => {
+        console.log('connected to database');
+    })
+    .catch((error) => {
+        console.log('connection failed');
+    });
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use("/images", express.static(path.join('backend/images')));
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -15,7 +27,9 @@ app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS, PUT");
     next();
 });
-// console.log(loginAuth);
-// app.use('/login', loginAuth);
-app.use('/auth', googleAuth);
+
+app.use('/login', loginAuth);
+app.use('/order', order);
+app.use('/washers', washers);
+
 module.exports = app;

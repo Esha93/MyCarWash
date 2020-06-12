@@ -1,0 +1,26 @@
+.Toolbar {
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #703b09dc;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.Toolbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.Toolbar a:hover,
+.Toolbar a:active {
+    text-decoration: none;
+    color: tomato;
+}

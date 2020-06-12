@@ -1,0 +1,14 @@
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(238, 134, 134);
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 0px 30px;
+    box-sizing: border-box;
+    width: 50%;
+    margin: auto;
+    
+}

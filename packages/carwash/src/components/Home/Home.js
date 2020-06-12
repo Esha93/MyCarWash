@@ -5,7 +5,7 @@ import classes from './Home.module.css';
 
 const home = (props) => (
     <div className={classes.Home}>
-        <img src={carwashImg} alt="CarWash" />
+        <img className={classes.Img} src={carwashImg} alt="CarWash" />
         <div className={classes.Div}>
             <Link to={{pathname:'/packages',search: 'now'}}>
                 <button className={[classes.Btn, classes.Now].join(' ')}>WASH NOW</button>

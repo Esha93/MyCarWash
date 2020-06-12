@@ -1,0 +1,18 @@
+.Nav {
+    top: 70px;
+}
+
+.Navitem {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background-color: teal;
+    color: white;
+    list-style: none;
+}
+
+.Nav a:hover,
+.Nav a:active {
+    text-decoration: none;
+    color: white;
+}

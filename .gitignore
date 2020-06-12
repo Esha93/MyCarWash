@@ -1,3 +1,4 @@
 node_modules/
 packages/carwash/node_modules/
 packages/washers/node_modules/
+package-lock.json/

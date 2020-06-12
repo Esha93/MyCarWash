@@ -1,14 +1,29 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+import { Form, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import classes from './Signup.module.css';
 
 class Signup extends React.Component {
     state = {
+        firstName: '',
+        lastName: '',
+        contactNumber: 0,
         email: '',
         password: '',
         confirmPassword: ''
+    }
+
+    firstNameChangeHandler = (event) => {
+        this.setState({firstName: event.target.value});
+    }
+
+    lastNameChangeHandler = (event) => {
+        this.setState({lastName: event.target.value});
+    }
+
+    contactNumberChangeHandler = (event) => {
+        this.setState({contactNumber: event.target.value});
     }
 
     emailChangeHandler = (event) => {
@@ -19,13 +34,18 @@ class Signup extends React.Component {
     }
 
     confirmPasswordChangeHandler = (event) => {
-        this.setState({password: event.target.value});
+        this.setState({confirmPassword: event.target.value});
     }
 
     signupHandler = (event) => {
         event.preventDefault();
         if(this.state.password === this.state.confirmPassword) {
-            const signup = {email: this.state.email, password: this.state.password};
+            const signup = {firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    contactNumber: this.state.contactNumber,
+                    email: this.state.email, 
+                    password: this.state.password};
+            console.log(signup);
             axios.post('http://localhost:8000/login/adduser', signup)
                 .then(res => console.log(res)).catch(err => console.log(err));  
         } else {
@@ -37,30 +57,53 @@ class Signup extends React.Component {
 
     render () {
         return (
-            <div >
-                <form className={classes.Modal} onSubmit={this.signupHandler}>
-                    <Form.Group controlId="formBasicEmail">
+            <div className={classes.Background}>
+                <Form className={classes.Modal} onSubmit={this.signupHandler}>
+                    <Form.Row style={{marginTop: '15px'}}>
+                    <Form.Group as={Col} controlId="formGridFirstName">
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control type="text" placeholder="First Name" required
+                            onChange={this.firstNameChangeHandler}/>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridLastName">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control type="text" placeholder="Last Name" required
+                            onChange={this.lastNameChangeHandler}/>
+                    </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                    <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" required
+                        <Form.Control type="email" placeholder="Email" required
                             onChange={this.emailChangeHandler}/>
                         
                     </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group as={Col} controlId="formGridContactNumber">
+                        <Form.Label>Contact Number</Form.Label>
+                        <Form.Control type="number" placeholder="Contact Number" required
+                            onChange={this.contactNumberChangeHandler}/>
+                    </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                    <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter Password" required
+                        <Form.Control type="password" placeholder="Password" required
                             onChange={this.passwordChangeHandler}/>
                     </Form.Group>
-                    <Form.Group controlId="formBasicConfirmPassword">
+                    <Form.Group as={Col} controlId="formGridConfirmPassword">
                         <Form.Label> Confirm Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter Password" required
+                        <Form.Control type="password" placeholder="Confirm Password" required
                             onChange={this.confirmPasswordChangeHandler}/>
                     </Form.Group>
+                    </Form.Row>
+                    <div style={{textAlign: 'center'}}>
                     <Form.Group>
                     <Button variant="info" type="submit">
                         SIGN UP
                     </Button>
                     </Form.Group>
-                </form>
+                    </div>
+                </Form>
             </div>
         )
     }
